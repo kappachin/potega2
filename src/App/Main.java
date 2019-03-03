@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         Logic logic = new Logic();
-        System.out.println(logic.potega(2,0));
+        System.out.println(logic.potegaWarunkowe(2,1));
 
     }
 }

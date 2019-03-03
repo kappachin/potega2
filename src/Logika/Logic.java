@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 
 public class Logic {
-    public BigInteger potega(int podstawa, int wykladnik) {
+    public BigInteger potegaWarunkowe(long podstawa, int wykladnik) {
         BigInteger wynik;
         if (wykladnik == 0) {
             wynik = BigInteger.valueOf(1);
@@ -17,6 +17,16 @@ public class Logic {
 
         }
         return wynik;
+    }
+
+    public BigInteger Potega(long podstawa, int wykladnik){
+        BigInteger wynik;
+        if(wykladnik == 0){
+            wynik = BigInteger.valueOf(1);
+        }
+
+       // ( a * pow(a,n-1))
+    return wynik;
     }
 
 
