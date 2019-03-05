@@ -9,24 +9,35 @@ public class Logic {
         if (wykladnik == 0) {
             wynik = BigInteger.valueOf(1);
         } else {
-            if ((wykladnik & 1) == 0) {
-                wynik = BigInteger.valueOf(0);
-            } else {
-                wynik = BigInteger.valueOf(0);
+            if ((wykladnik & 1) == 0) { //even
+                int i = 1;
+                wynik = BigInteger.valueOf(podstawa);
+                while (i < (wykladnik/2)) {
+                 wynik = wynik.multiply(BigInteger.valueOf(podstawa));
+                 i++;
+                } wynik = wynik.multiply(wynik);
+            } else { //odd
+                int i = 1;
+                wynik = BigInteger.valueOf(podstawa);
+                while(i<(wykladnik - 1)){
+                    wynik = wynik.multiply(BigInteger.valueOf(podstawa));
+                    i++;
+                } wynik = wynik.multiply(BigInteger.valueOf(podstawa));
+
             }
 
         }
         return wynik;
     }
 
-    public BigInteger Potega(long podstawa, int wykladnik){
+    public BigInteger Potega(long podstawa, int wykladnik) {
         BigInteger wynik;
 
 
-        if(wykladnik == 0){
+        if (wykladnik == 0) {
             wynik = BigInteger.valueOf(1);
-        }else{
-            if ((wykladnik & 1) == 0){
+        } else {
+            if ((wykladnik & 1) == 0) {
                 //even
                 BigInteger temp = Potega(podstawa, (wykladnik / 2));
                 wynik = temp.multiply(temp);
@@ -40,8 +51,8 @@ public class Logic {
 
         }
 
-       // ( a * pow(a,n-1))
-    return wynik;
+        // ( a * pow(a,n-1))
+        return wynik;
     }
 
 
